@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>YGO!Cards Library</title>
+  </head>
+  <body>
+
+    <header class="container-fluid">
+      <div class="row p-1 bg-dark text-white text-center">
+        <div class="col">
+          <h1>YGOCards!</h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mt-2">
+            <h2>Text Search</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="input-keyword form-control" placeholder="Search card..." aria-label="Search card" aria-describedby="button-addon2">
+              <button class="search-button btn btn-primary text-white" type="button" id="button-addon2">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mt-2 mb-2">
+            <p class="text-center" type="button" data-bs-toggle="collapse" data-bs-target="#advFilter" aria-expanded="false" aria-controls="advFilter">
+              Advance Filter
+            </p>
+            <div id="advFilter" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="btnSec">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+                      Select Type
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Select Type</a></li>
+                      <li><a class="dropdown-item" href="#">Monster</a></li>
+                      <li><a class="dropdown-item" href="#">Spell</a></li>
+                      <li><a class="dropdown-item" href="#">Trap</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row cards-container"></div>
+
+      </div>
+    </main>
+
+    <!-- START of Modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="cardsModal" tabindex="-1" aria-labelledby="cardsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END of Modal -->
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <!-- My JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
