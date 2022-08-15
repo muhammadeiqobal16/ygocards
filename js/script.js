@@ -1,14 +1,12 @@
 // let url = `https://db.ygoprodeck.com/api/v7/cardinfo.php`;
-let ex = `https://ygoprodeck.com/card-database/?&fname=magician&desc=magician&sort=name&num=24&offset=0`
+// let ex = `https://ygoprodeck.com/card-database/?&fname=magician&desc=magician&sort=name&num=24&offset=0`
 
 const searchBtn = document.querySelector(`.search-button`);
 searchBtn.addEventListener(`click`, function(){
-
     const inputKeyword = document.querySelector(`.input-keyword`);
     fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?&fname=${inputKeyword.value}&desc=${inputKeyword.value}&sort=name&num=24&offset=0`)
         .then(response => response.json()).then(result => {
             let cardResult = result.data;
-            console.log(cardResult)
             let cards = ``;
             cardResult.forEach(card => {
                 cards += showCard(card);
@@ -23,17 +21,20 @@ searchBtn.addEventListener(`click`, function(){
                     fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${cardid}`)
                         .then(response => response.json()).then(result => {
                             const cardDetails = result.data[0];
-                            console.log(cardDetails);
 
                             const modalContent = showModalContent(cardDetails);
 
                             const modalBody = document.querySelector(`.modal-body`);
                             modalBody.innerHTML = modalContent;
-                        });
+                        })
+                        .catch(response => console.log(response));
                 });
             });
         })
+        .catch(response => console.log(response));
 });
+
+
 
 function showCard(card){
     return `<div class="col-4 col-md-2 mb-3">
