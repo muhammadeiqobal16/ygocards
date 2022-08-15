@@ -34,8 +34,6 @@ searchBtn.addEventListener(`click`, function(){
         .catch(response => console.log(response));
 });
 
-
-
 function showCard(card){
     return `<div class="col-4 col-md-2 mb-3">
                 <div class="card" type="button">
