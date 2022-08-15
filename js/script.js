@@ -5,7 +5,7 @@ const searchBtn = document.querySelector(`.search-button`);
 searchBtn.addEventListener(`click`, function(){
 
     const inputKeyword = document.querySelector(`.input-keyword`);
-    fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?&fname=${inputKeyword.value}&desc=${inputKeyword.value}&sort=name`)
+    fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?&fname=${inputKeyword.value}&desc=${inputKeyword.value}&sort=name&num=24&offset=0`)
         .then(response => response.json()).then(result => {
             let cardResult = result.data;
             console.log(cardResult)
